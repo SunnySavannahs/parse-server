@@ -63,7 +63,7 @@ ParseRequest.postData = function() {
       e.preventDefault();
     });
   });
-  XHR.POST('/parse/classes/GameScore');
+  XHR.POST('/parse/classes/ImageGallery');
 }
 
 ParseRequest.getData = function() {
@@ -79,7 +79,7 @@ ParseRequest.getData = function() {
       e.preventDefault();
     })
   });
-  XHR.GET('/parse/classes/GameScore');
+  XHR.GET('/parse/classes/ImageGallery');
 }
 
 ParseRequest.postCloudCodeData = function() {
@@ -131,7 +131,7 @@ XHR.setCallback = function(callback) {
 }
 
 XHR.POST = function(path, callback) {
-  var seed = {"score":1337,"playerName":"Sean Plott","cheatMode":false}
+  var seed = {}
   this.xhttp.open("POST", Config.getUrl() + path, true);
   this.xhttp.setRequestHeader("X-Parse-Application-Id", "myAppId");
   this.xhttp.setRequestHeader("Content-type", "application/json");
