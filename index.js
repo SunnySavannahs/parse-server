@@ -1,6 +1,8 @@
 // Example express application adding the parse-server module to expose Parse
 // compatible API routes.
 
+require('dotenv').config()
+
 process.env.VERBOSE=true;
 
 var express = require('express');
@@ -34,8 +36,8 @@ var dashboardConfig = {
     }
   ],"users": [
     {
-      "user":"janoside",
-      "pass":"gvfpbzriaJjm92qBPXTzMWsYWpgPj6FyDTu4g4Zbc6zHgLZzaJ"
+      "user": (process.env.DASHBAORD_ADMIN_USERNAME || 'admin'),
+      "pass": (process.env.DASHBOARD_ADMIN_PASSWORD || 'admin')
     }
   ]
 };
